@@ -1,34 +1,60 @@
-
-import React from "react";
-import {
-    Route,
-    Link,
-    Routes
-} from "react-router-dom";
+import React, { useState } from 'react';
 import Contact from './Contact'
 import About from "./About";
 import Projects from "./Projects";
-function MyNavbar() {
-    return (
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+} from 'reactstrap';
+import {
+    Route,
+    Routes
+} from "react-router-dom";
+import Home from './home';
 
+function MyNavbar(props) {
+    const [collapsed, setCollapsed] = useState(true);
+
+    const toggleNavbar = () => setCollapsed(!collapsed);
+
+    return (
         <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/projects">Projects</Link>
-                    </li>
-                    <li>
-                        <Link to="/contact">Contact</Link>
-                    </li>
-                </ul>
-            </nav>
+            <Navbar color="faded" light>
+                <NavbarBrand href="/" className="me-auto">
+                    Harun Altun
+                </NavbarBrand>
+                <NavbarToggler onClick={toggleNavbar} className="me-2" />
+                <Collapse isOpen={!collapsed} navbar>
+                    <Nav navbar>
+                        <NavItem>
+                            <NavLink href="/">Home</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/about">
+                                About
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/projects">
+                                Projects
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/about">
+                                Contact
+                            </NavLink>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
+            </Navbar>
             <Routes>
+                <Route path="/"
+                    element={<Home />} />
                 <Route path="/about"
                     element={<About />} />
                 <Route path="/projects"
@@ -36,10 +62,11 @@ function MyNavbar() {
                 <Route path="/contact"
                     element={<Contact />} />
             </Routes>
-
         </div>
-
     );
 }
 
 export default MyNavbar;
+
+
+

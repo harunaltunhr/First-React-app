@@ -1,4 +1,4 @@
-import './App.css';
+
 import MyNavbar from './Navbar';
 import Footer from './Footer';
 function App() {
