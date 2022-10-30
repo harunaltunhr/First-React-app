@@ -23,46 +23,48 @@ function MyNavbar(props) {
     const toggleNavbar = () => setCollapsed(!collapsed);
 
     return (
-        <div>
-            <Navbar color="faded" light>
-                <NavbarBrand href="/" className="me-auto">
-                    Harun Altun
-                </NavbarBrand>
-                <NavbarToggler onClick={toggleNavbar} className="me-2" />
-                <Collapse isOpen={!collapsed} navbar>
-                    <Nav navbar>
-                        <NavItem>
-                            <NavLink href="/">Home</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/about">
-                                About
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/projects">
-                                Projects
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/about">
-                                Contact
-                            </NavLink>
-                        </NavItem>
-                    </Nav>
-                </Collapse>
-            </Navbar>
-            <Routes>
-                <Route path="/"
-                    element={<Home />} />
-                <Route path="/about"
-                    element={<About />} />
-                <Route path="/projects"
-                    element={<Projects />} />
-                <Route path="/contact"
-                    element={<Contact />} />
-            </Routes>
-        </div>
+        <Nav>
+            <div className="container-fluid">
+                <Navbar color="faded" light>
+                    <NavbarBrand href="/" className="me-auto">
+                        Harun Altun
+                    </NavbarBrand>
+                    <NavbarToggler onClick={toggleNavbar} className="me-2" />
+                    <Collapse isOpen={!collapsed} navbar>
+                        <Nav navbar>
+                            <NavItem>
+                                <NavLink href="/">Home</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/about">
+                                    About
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/projects">
+                                    Projects
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/about">
+                                    Contact
+                                </NavLink>
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+                <Routes>
+                    <Route path="/"
+                        element={<Home />} />
+                    <Route path="/about"
+                        element={<About />} />
+                    <Route path="/projects"
+                        element={<Projects />} />
+                    <Route path="/contact"
+                        element={<Contact />} />
+                </Routes>
+            </div>
+        </Nav>
     );
 }
 

@@ -7,8 +7,8 @@ function Home() {
                     I’m a old recruiter and fresh Web developer in the Belgium.</p></div>
                 <div className="col-6"
                 >
-                    <img alt="Sample"
-                        src="https://picsum.photos/600/600"
+                    <img alt="Harun"
+                        src='/src/HarunAnime.jpeg'
                     ></img></div>
             </div>
         </div>
